@@ -35,7 +35,7 @@ describe("Todo Application", function () {
       console.log(error);
     }
   });
-
+  //signup details 
   test("Sign up", async () => {
     let res = await agent.get("/signup");
     const csrfToken = extractCsrfToken(res);
@@ -48,7 +48,7 @@ describe("Todo Application", function () {
     });
     expect(res.statusCode).toBe(302);
   });
-
+  //signout details
   test("Sign out", async () => {
     let res = await agent.get("/todos");
     expect(res.statusCode).toBe(200);
@@ -57,7 +57,7 @@ describe("Todo Application", function () {
     res = await agent.get("/todos");
     expect(res.statusCode).toBe(302);
   });
-
+  //create todo
   test("Create new todo", async () => {
     const agent = request.agent(server);
     await login(agent, "nani@gmail.com", "0122");
@@ -71,7 +71,7 @@ describe("Todo Application", function () {
     });
     expect(response.statusCode).toBe(302);
   });
-
+  //mark todo
   test("Mark todo as completed (Updating Todo)", async () => {
     const agent = request.agent(server);
     await login(agent, "nani@gmail.com", "0122");
@@ -162,7 +162,7 @@ describe("Todo Application", function () {
   //   expect(parsedResponse.length).toBe(5);
   //   expect(parsedResponse[4]["title"]).toBe("Buy ps3");
   // });
-
+  //delete todo
   test("Delete todo using ID", async () => {
     const agent = request.agent(server);
     await login(agent, "nani@gmail.com", "0122");
