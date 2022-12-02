@@ -106,7 +106,7 @@ app.get(
       const completedItems = await Todo.completedItems(loggedIn);
       if (request.accepts("html")) {
         response.render("todos", {
-          title: "To-Do Manager",
+          title: "Ashish Todo Manager",
           overDue,
           dueToday,
           dueLater,
@@ -170,7 +170,7 @@ app.post("/users", async (request, response) => {
     return response.redirect("/signup");
   }
   if (!request.body.email) {
-    request.flash("error", "Please enter Email ID");
+    request.flash("error", "Please enter valid Email Id or enter Email ID");
     return response.redirect("/signup");
   }
   if (!request.body.password) {
