@@ -26,7 +26,7 @@ const LocalStrategy = require("passport-local");
 const bcrypt = require("bcrypt");
 
 const saltRounds = 10;
-app.use(flash());
+app.use(flash());//using flash
 
 app.use(session({
   secret:"my-super-secret-key-2172817261561562",
